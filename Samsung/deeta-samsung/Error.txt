@@ -1,0 +1,11 @@
+TYPE ERROR-
+    A TypeError happens when you try to do something with a value that isn’t allowed for its type. For example, trying to add a number to a word.
+        Example:
+            x = "hello"
+            y = 5
+            print(x + y)
+
+NAME ERROR-
+    A NameError happens when you try to use a variable or function that hasn't been defined.
+        Example:
+            print(x)  # NameError: name 'x' is not defined

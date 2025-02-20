@@ -1,0 +1,21 @@
+RNSIT PYTHON DATA SCIENCE TRAINING FEB-25
+
+DAY1 Monday 17-02-2025
+
+To copy a git repo to our local machine:
+$ git clone repo_URL
+
+To get the updates into our local repo
+$ git pull origin main
+
+main here is the default github branch
+-------------------------------------------------
+Configuiration git commands:
+
+$ git config --global user.name "neelmyna" $ git config --global user.email "trainer_email@email.com"
+
+Credential Manager -> Windows Credentials -> github
+
+$ 
+
+

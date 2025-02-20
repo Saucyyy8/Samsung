@@ -1,0 +1,70 @@
+Tax Calculator Problem
+GlobalNext Solutions, a rapidly growing IT company, employs a diverse workforce ranging from entry-
+level developers to senior executives. The HR department wants to streamline the tax calculation
+process for employees under the New Tax Regime (2023). They’ve decided to build a tax calculation
+program that computes salaries, taxes, and net incomes while ensuring compliance with the latest tax
+laws.
+As a software developer in GlobalNext’s HR-Tech team, you are tasked with developing this program.
+The system should process employee salary details, validate inputs, calculate taxes, and generate
+detailed reports.
+Objectives
+The program should:
+1. Accept employee details, including monthly salary components.
+2. Calculate gross and taxable income according to the New Tax Regime (2023).
+3. Compute the tax payable using the appropriate tax slabs.
+4. Apply any applicable standard deductions and rebates.
+5. Generate reports detailing gross salary, taxable income, tax payable, and net salary.
+Level 1: Basic Input and Salary Calculation
+Objective: Capture employee details and calculate the gross salary.
+Tasks:
+• Accept the following inputs for an employee:
+o Name
+o EmpID
+o Basic Monthly Salary
+o Special Allowances (Monthly)
+o Bonus Percentage (Annual Bonus as % of Gross Salary)
+• Calculate:
+o Gross Monthly Salary = Basic Salary + Special Allowances
+o Annual Gross Salary = (Gross Monthly Salary × 12) + Bonus
+• Output:
+o Display the employee details, gross monthly salary, and annual gross salary.
+<<<<<<< HEAD
+
+
+BEGIN
+
+    Step 1: Input employee details
+        PRINT "Enter employee name:"
+        READ Name
+        PRINT "Enter employee ID:"
+        READ EmpID
+        PRINT "Enter basic monthly salary:"
+        READ BasicSalary
+        PRINT "Enter special allowances (monthly):"
+        READ SpecialAllowances
+        PRINT "Enter bonus percentage (annual):"
+        READ BonusPercentage
+    
+    Step 2: Calculate gross monthly salary
+        GrossMonthlySalary = BasicSalary + SpecialAllowances
+
+    Step 3: Calculate annual gross salary
+        Bonus = (GrossMonthlySalary * BonusPercentage) / 100
+        AnnualGrossSalary = (GrossMonthlySalary * 12) + Bonus
+
+    Step 4: Output employee details and salary calculations
+        PRINT "Employee Name: " + Name
+        PRINT "Employee ID: " + EmpID
+        PRINT "Gross Monthly Salary: " + GrossMonthlySalary
+        PRINT "Annual Gross Salary: " + AnnualGrossSalary
+
+END
+=======
+-----------------------------------------------
+Level 2: Taxable Income Calculation
+Objective: Calculate taxable income after standard deductions.
+Tasks:
+• Deduct a Standard Deduction of ₹50,000 from the annual gross salary.
+• Compute the Taxable Income and display all intermediate calculations.
+Output: Display gross salary, standard deduction and taxable income.
+>>>>>>> f73d126023fdff03dea67a56704a400b135ff78b
