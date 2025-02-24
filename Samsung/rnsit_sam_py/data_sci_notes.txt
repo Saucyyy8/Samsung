@@ -15,7 +15,500 @@ Configuiration git commands:
 $ git config --global user.name "neelmyna" $ git config --global user.email "trainer_email@email.com"
 
 Credential Manager -> Windows Credentials -> github
+-----------------------------------------------------
+To check the current status of my Repo:
+$ git status
 
-$ 
+To Mark all the files that need to be updated in the server.
+$ git add .
+
+This command creates an object in tyhe local machine which consists of all the marked file.
+$ git commit -m "notes of the data science added"
+
+This command takes the object to the server (remote repo)
+$ git push origin main
+
+NOTE: Befor we do push, it is always safe to do pull.
+-------------------------------------------------------
+5 STEPS TO SOLVE A PROBLEM:
+
+1. Understand the probelm. Write down the i/p data in probelm statement. Write down the required or relevant information. Isolate the unwanted data and information. 
+
+2. Find solution in whats ever means you can. Trial and error method, applying specific algorithm, etc.
+
+3. Put down the solution in step by step procedure. Each step must be simple, finite and unambigious.
+
+4. Write the Fake code (pseudocode)
+
+5. Code it
+
+6. Test cases
+---------------------------------------------------
+p2. Check if a positive integer number is perfect square
+
+1.Read a number from user, say N
+2. Find root of the i/p number, say ROOT
+3. covert ROOT to int
+4. Multiply ROOT with itself and check if it is N
+	if yes: Declare N is PS
+	else: Declare N is not a PS
+
+read N
+ROOT = sqrt(N)
+ROOT = int(ROOT)
+if ROOT * ROOT == N then
+	print N is PS
+else
+	print N is not a PS
+
+36  6.0  6  36
+60  7.8  
+-----------------------------------------------
+DAY2 TUESDAY 18-02-2025
+
+range(10)
+
+[0, 10)
+[20, 30]
+range(20, 31)
+range(20, 40, 2)
+range(40, 30, 3)
+range(40, 30, -3)
+
+for i in range(10):
+	i += 2
+	print(i)
+	
+--------------------------------
+To know where python is installed:
+
+python -c "import sys; print(sys.executable)"
+------------------------------------------------------
+Data Structure:
+Storing and arranging data in memory in some particular way so as to achieve some efficiency.
+
+Array:
+Is a DS where elements are stored in continuous memory locations.
+Memory inefficient because, its size is fixed.
+Time efficient because to access (look up) any element is 1 unit of time.
+Simplest DS and easy to use with the help of subscript.
+Note: The DS to which we can apply subscript is called as Ordered DS.
+
+Linked List:
+Add the Points your selves
+
+------------------------------------------------
+Arithmatic Operators:
++ - * / // % **
+
+I/P are numbers
+O/P is number
+All are binary Operators
+Used with Infix notation
+All operators except ** operator have Left to Right Associtivity
+5 + 5.5
+Here the 5 is implicitly casted to float and then the addition is done.
+The precedence of + and - is less than the other.
+What is evaluated 1st is the operator having highest precedency.
+The infix notation expressions are 1st converted to postfix and then evaluated.
+-------------------------------------------
+Do we have a main function in Python ?
+Yes we have.
+The global code is implicitly put into __main__()
+-----------------------------------
+CERTIFICATIONS:
+
+Java exacm codes
+1Z0-811
+1Z0-829
+1z0-830
+
+oracle java certification
+pythoninstitute.org  (PCAP, PCEP, PCAD)
+
+For JS it is linuxfoundation
+
+CDAC
+nptel
+--------------------------------------------------
+Notations:
+Big-Oh
+
+1. Usually used to find worst case efficiency. However all 3 can also be found.
+2. Finds the efficiency on the i/p size (n)
+3. Its purpose if not to find the exact efficiency. Rather it is to find the ORDER in which the algorithm is.
+Eg: liner, quadratic, factorial, square root, logarthmic etc.
+4. It considers the i/p size 'n' to be very big. Thus it gives effiecncy for large data sets.
+5. Remove the constants from the efficiency to get only the order.
+
+Linear Search:
+Best Case Efficiency (BCE): O(1)
+WCE: O(n)
+ACE: O(n)
+
+BINARY SEARCH:
+Pre Requisite: The elements in the DS must be sorted.
+
+Number of elements as i/p: N
+
+Let us assume the number of iterations = X
+
+N     N/2     N/4   ........  8    4    2    1
+2(X-1)                       2(3)      2(1) 2(0)
+
+N = 2(X-1)
+N = 2(X)
+X = Log(N)
+
+WCE = O(Log(N))
+BCE = O(1)
+-----------------------------------------------
+Frame: A frame is memory allocated to a function during runtime.
+
+Special Purpose Registers:
+IR
+PC
+FP
+SP
+Accumalator
+
+Function Call Stack
+---------------------------------------------------
+Command Line Arguments
+
+Passing the data to the program from the command line.
+
+$ python p1.py
+
+$ python p1.py 10 20 30
+
+Here 10 20 30 are the command line Args.
+However, the script name itself (p1.py) is also sent as one of the argument, precisely as 1st Argument.
+
+All arguments are always passed as strings.
+These arguments are stored by the OS in memory in an array and the reference of the array is passed by the OS to the program which is copied into sys.argv
+--------------------------------------------------------
+Data types in MySQl:
+numbers:
+tinyint			byte
+smallint		short
+int				int
+bigint			long
+date
+
+varchar
+float
+
+Contraints:
+check
+default
+unique
+not null
+auto_increment
+primary key
+references
 
 
+person
+id			int				primary key		auto_increment
+name		varchar(64)		not null
+age			tinyint			
+location	bengaluru		
+gender		varchar(2)		check
+
+
+create table persons(id int primary key auto_increment, name varchar(32) not null, age tinyint, location varchar(32), gender check());
+
+create table persons(id int primary key auto_increment, name varchar(32) not null, age tinyint, location varchar(32), gender varchar(1) check()) auto_increment(101, 21);
+
+insert into persons(name, age, gender) values('nithin', 40, 'm');
+---------------------------------------------------------
+employees
+id			int				primary key auto_increment
+name		varchar(64)		not null
+technology	varchar(32)	
+designation	varchar(32)	
+salary		float			default(10000)
+commission	float		
+phone_num	bigint			unique
+date_of_joining datetime	default getdate()
+years_of_exp tinyint		not null
+
+
+SQL
+DDL		create, alter, drop, truncate
+DML		insert, delete, update
+TCL		savepoint, commit, rollback
+DRL		select
+DCL		grant, revoke
+
+1. Print all the employee details whose salary is below 1 lakh.
+-> select * from employees where salary < 100000;
+
+2. List employee name and designation whose name starts with A.
+-> select name, designation from employees where name like 'a%'
+
+3. List name and phone number of the employees who haven't got the commission for this month.
+
+-> select name, phone_num from employees where commission = null;
+(check the cell value in the table with the value in the variable named null)
+
+-> select name, phone_num from employees where commission = 'null';
+(compare the cell value in the table with the value in the string literal (constant value) 'null')
+
+-> select name, phone_num from employees where commission is null;
+Checks if the cell value of commission in the row is empty.
+
+4. delete all rows from the table
+
+-> delete from employees;
+Deletes the data in the table (all rows), but the auto_increment data and the meta data persists.
+That is, the new row added later, would get the id which is continued value.
+
+-> truncate table employees;
+Deletes the data in the table (all rows) and also the auto_increment data.
+But the meta data persists.
+That is, the new row added later, would get the id value 1.
+
+-> drop table employees.
+Every thing is gone.
+
+CRUD Operations:
+C create (insert) One record
+R read/retrieve One tuple
+U update One row
+D delete One row
+List all rows
+
+insert into employees(name, technology, designation, salary, commission, phone_num, date_of_joining, years_of_exp) values ('nithin', 'python', 'trainer', 125000, 65000, 9480273090, '2025/01/01', 10);
+
+select * from employees where id = 1;
+
+update employees set salary = 145000 where id = 1;
+
+delete from employees where id = 5;
+
+select * from employees;
+-------------------------------------
+These are the most frequently used operations.
+In RestFul APIs, which uses the HTTP protocol.
+We perform these 5 operations using the VERBS:
+1. POST   for insert
+2. GET    for read/select (read all)
+3. PUT/PATCH for update (with id)
+4. DELETE for delete    (with id)
+5. GET with id for reading one
+
+members (id, name, wallet_bal, phone_num, dob, gender)
+
+games (id, name, price, min_count, max_count, duration, desc)
+
+recharges (id, amount, mem_id, date)
+mem_id
+
+transactions (id, mem_id, amount, game_id)
+mem_id
+
+collections (id, date, amount)
+--------------------------------------------------
+Connect to Mysql from Python
+And perform the operations on the DB
+
+hostname
+port number
+username
+password
+database
+charset
+---------------------------------------------------------------------
+DAY4 THURSDAY 20-02-2024
+
+Test-1 Link:
+https://docs.google.com/forms/d/1pPQDbuwFkYxa7QoPBVS4T_fRXadTZW0A48hR6SkMXMI/edit
+
+Insertion Sort: Optimistic Sort
+Technique is Decrease and Conquer
+
+Algorithm:
+How does it work
+Strategy
+Best and Worst case scenarios
+BCE and WCE
+Pseudocode and Implimentation
+Optimization
+Applications (Where to use and when not to use)
+
+from 2nd element to last element of unsorted array:
+	copy current element into element
+	j = index of element - 1
+	i = index of last element in sorted array
+	while j >= 0 and element < current element in sorted:
+		sorted_array[j+1] = sorted_array[j]
+		j--
+	sorted_array[j+1] = element
+	
+for i in range(1, len(array)):
+	j = i-1
+	element = array[i]
+	while j >= 0 and element < array[j]:
+		array[j+1] = array[j]
+		j--
+	array[j+1] = element
+
+numbers = [int(ele) for ele in input().split()]
+
+
+x = 10
+print(x)
+
+
+if(x >10)
+	do this
+do this
+
+if C1
+	do 1
+else
+	do 2
+
+1. Insertion sort to sort case insensitive strings
+2. Find sum of Odd placed Even digits in a number.
+
+23751
+---------------------------------------
+MERGE SORT
+
+12   5   3   2    9   7   13    4
+
+12   5   3   2           9    7    13    4
+
+
+12  5      3  2        9  7        13  4
+
+12     5      3      2      9      7      13      4
+
+5  12         2  3        7  9       4   13
+
+2  3  5  12          4  7  9  13
+         i	            		 j
+
+2  3   4   5   7   9   12   13
+                       k
+
+
+def merge_sort(numbers, low, high):
+	if low < high:
+		mid (low + (high - low) // 2)
+		//mid = (low + high) // 2
+		merge_sort(numbers, low, mid-1)
+		merge_sort(numbers, mid, high)
+		merge(numbers, low, mid, high)
+
+# while i < len(array1) and j < len(array2):
+	
+def merge(numbers, low, mid, high):
+	Copy 1st half of the array into array1
+	Copy 2nd half of the array into array2
+	
+	merged_array = []
+	k = 0
+	i = low
+	j = mid
+	while array1 and array2 has numbers:
+		if array1[i] < array2[j]:
+			merged_array[k] =  array1[i]
+			i += 1
+		else:
+			merged_array[k] =  array1[j]
+			j += 1
+		k += 1
+	merged_array += array1[i:]
+	merged_array += array1[j:]
+---------------------------------------------------
+BUBBLE SORT:
+12  5  19  11  3  17  2  13  7
+
+5  12  11  3  17  2  13  7  19
+
+5  11  3  12  2  13  7  17
+
+8 + 7 + 6 + 5 ... 1 = No of comparisons
+-------------------
+2  3  5  7  11  12  13  17  19
+
+def bubble_sort(array):
+	for i in range(len(array)-1):
+		for j in range(len(array)-i-1):
+			if array[j] > array[j+1]:
+				array[j], array[j+1] = array[j+1], array[j]
+		
+def optimized_bubble_sort(array):
+	for i in range(len(array)-1):
+		sorted = True
+		for j in range(len(array)-i-1):
+			if array[j] > array[j+1]:
+				array[j], array[j+1] = array[j+1], array[j]
+				sorted = False
+		if sorted:
+			return
+------------------------------------------------------
+DAY5 21-02-2025 FRIDAY
+
+TREE:
+> A Tree is a acyclic DS
+> A Tree has one entry point called as ROOT
+> The data is stored in NODES in a tree.
+> The nodes are stored in such a way that, one related to the orther in Parent-Child relationship
+> IF you descend a tree, the immediately reachable node(s) are said to be the Child node(s)
+> The current node thus becomes the Parent node.
+> Reaching a child node and then to its child and so on is said to be TRAVERSING.
+> Thus reaching any node in a Tree has UNIQUE PATH.
+> The Root of the Tree is said to be at a lavel 1.
+> The child node(s) of the Root is said to be at a level 2 and so on.
+> The highest possible level is said to be the DEPTH or HEIGHT of the Tree.
+> And this also is the longest possible PATH in the Tree.
+> If every node in the Tree has a maximum of 2 child nodes, then it is said to be BINARY TREE.
+> The 2 child nodes of the parent node can be termed as LEFT CHILD NODE and RIGHT CHILD NODE.
+> From the Left child the tree that can be traversed along with the left child itself, is said to be LEFT SUB TREE and on similar lines we have RIGHT SUB TREE.
+> For a given depth/height of say N, we can have at most 2(N)-1 nodes in a Binary Tree.
+> If in a binary, every node has exactly 0 or 2 child nodes then such a tree is called as STRICTLY BINARY TREE.
+> If a Binary tree has exactly 2(N)-1 nodes in it, then it is said to be COMPLETE BINARY TREE.
+> If a bibary tree has nearly 2(N)-1 nodes or exactly then is is said to be well balanced and thus the term BALANCED BT.
+> Thus we can derive what can be a imbalanced binary tree.
+> As we traverse a BT, moving to left child or moving to right and so on, we observe that we are isolating the nodes in all other paths.
+> This traversing if done in a disciplened pattern/fashion, then it is Recursive in nature.
+> Thus, reaching every new node while traversing, we can consider that node itself as Root and it and its descendents make a Binary Tree by itself.
+> If in a BT, the nodes are ARRANGED in such a way that the left child node of any node in the tree has data smaller than the data in itself and the right child node has data greater than or equal to its own data (and this consistent in entire tree) then such a BT is said to be BINARY SEARCH TREE (BST).
+> If in a BST, there are only and only left child nodes (or only right child nodes), and we apply search then the efficiency O(n).
+> However, in a BST of level N, we can have 2(N)-1 nodes. So, a BST with level N having N nodes is the Worst possible BST (or even BT).
+> IF a BST is Complete binary tree or Balanced BST, then a search would yield an efficeincy of O(LogN). Because with every traversal, we make away with exactly(nearly) half of the nodes in the Tree.
+> If we traverse the entire BT in the pattern L-R'-R then it is said to be In-Order traversal.
+> If we traverse the entire BT in the pattern R'-L-R then it is said to be Pre-Order traversal.
+> If we traverse the entire BT in the pattern L-R-R' then it is said to be Post-Order traversal.
+> Applying the Inorder traversal on a BST gives us the data in Increasing order.
+> A Node having no Child nodes is said to be LEAF node (brahmachari) node.
+> We always add the new node in a BST as a leaf node.
+> Adding or deleting a node from a BST hampers the balancing of the tree.
+> Deleting a node from a BST can be divided into 3:
+	1. When node to be deleted is the leaf node (node with zero child nodes). In this case, you just have to make the respective link of its parent NULL.
+	2. When the node to be deleted has 1 child then the child node of the node being deleted, will be made the same child as it was to its parent. In other words, the child node of the node being deleted, will replace it.
+	3. When we are deleting a node with 2 child nodes, then the right child of the node being deleted, becomes the right child of its parent (The child node will takes its place) and the left child of the node being deleted along with its sub tree, should be made child of the left most child of the right child.
+
+--------------------------------------------------------
+https://docs.google.com/forms/d/1GCXb1r2epoNm6RdNSz3WqU-LIFICsnRFBuXthjeyPnk/edit
+
+CERTIFICATE CREATION PROJECT:
+
+1. read data from .csv and print them on console
+2. read data from user/console and write it to a .txt file
+3. read person data from console and write it to a .dat file
+4. read data from binary file (.dat file) and print the object data on console.
+
+5. Create a html template for the certificate.
+6. Introduce variables in the html template for USN and NAME
+7. Read data from .csv file (one student data) and insert it in html file.
+8. Read data from .csv file (multiple student data) and insert it in html files.
+
+9. Program to convert .html to .pdf 
+10. Read rows (student data) from .csv file and create the html and insert the data into the html. Lastly convert the .html files into .pdf
+11. Create .zip or .rar for all the pdf files.

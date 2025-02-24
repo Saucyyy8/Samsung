@@ -1,0 +1,16 @@
+1. Convert infiz expresssion to postfix.
+2. Evaluate a postfix expression.
+3. Find Nth term of the series: 1 2 2 3 3 5 5 7 8 11 13 13
+Odd terms: 1 2 3 5  8 13 21
+Even terms:2 3 5 7 11 13 
+4. Accept a number and find the next smallest possible bigger number that must have all digits as in the input number and same number of digits.
+
+Start from the unit place digit
+Look for the next digit which is smaller than the current digit
+Mark the position of the smaller digit
+Swap digits ( ?? )
+Sort digits after the position in ?? order
+---------------------------------------------------
+5. 
+
+

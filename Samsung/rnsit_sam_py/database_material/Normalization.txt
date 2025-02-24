@@ -1,0 +1,8 @@
+student table
+
+id - name - dept - hod   - PhNo
+1  - s1   - cse  - profA - 1234
+2  - s2   - ec   - profB - 1233
+3  - s3   - cse  - profA - 1234
+4  - s4   - IT   - profC - 1232
+5  - s5   - cse  - profA - 1234
